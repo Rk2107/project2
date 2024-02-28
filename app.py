@@ -22,8 +22,6 @@ with st.sidebar:
     - [OpenAI](https://platform.openai.com/docs/models) LLM model
  
     ''')
-    add_vertical_space(5)
-    st.write('Made by [Rohit K]')
  
 load_dotenv()
  

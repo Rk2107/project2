@@ -23,8 +23,7 @@ with st.sidebar:
     - [OpenAI](https://platform.openai.com/docs/models) LLM model
  
     ''')
-    add_vertical_space(5)
-    st.write('Made By RK')
+   
  
 load_dotenv()
  

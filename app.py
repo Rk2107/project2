@@ -50,24 +50,24 @@ def main():
         # # embeddings
         store_name = pdf.name[:-4]
         st.write(f'{store_name}')
-        # st.write(chunks)
+        st.write(chunks)
  
         if os.path.exists(f"{store_name}.pkl"):
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
-            # st.write('Embeddings Loaded from the Disk')s
+             st.write('Embeddings Loaded from the Disk')s
         else:
             embeddings = OpenAIEmbeddings()
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(VectorStore, f)
  
-        # embeddings = OpenAIEmbeddings()
-        # VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+         embeddings = OpenAIEmbeddings()
+         VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
  
         # Accept user questions/query
         query = st.text_input("Ask questions about your PDF file:")
-        # st.write(query)
+         st.write(query)
  
         if query:
             docs = VectorStore.similarity_search(query=query, k=3)

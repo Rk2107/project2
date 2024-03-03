@@ -1,4 +1,3 @@
-
 import streamlit as st
 from dotenv import load_dotenv
 import pickle
@@ -23,7 +22,7 @@ with st.sidebar:
     - [OpenAI](https://platform.openai.com/docs/models) LLM model
  
     ''')
-   
+
  
 load_dotenv()
  
@@ -64,8 +63,8 @@ def main():
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(VectorStore, f)
  
-          embeddings = OpenAIEmbeddings()
-          VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+        # embeddings = OpenAIEmbeddings()
+        # VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
  
         # Accept user questions/query
         query = st.text_input("Ask questions about your PDF file:")

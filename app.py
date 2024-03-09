@@ -2,7 +2,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import pickle
 from PyPDF2 import PdfReader
-#from streamlit_extras.add_vertical_space import add_vertical_space
+from streamlit_extras.add_vertical_space import add_vertical_space
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -19,10 +19,8 @@ with st.sidebar:
     This app is an LLM-powered chatbot built using:
     - [Streamlit](https://streamlit.io/)
     - [LangChain](https://python.langchain.com/)
-    - [OpenAI](https://platform.openai.com/docs/models) LLM model
- 
     ''')
-
+  
  
 load_dotenv()
  
@@ -81,4 +79,4 @@ def main():
             st.write(response)
  
 if __name__ == '__main__':
-     main()
+    main()

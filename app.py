@@ -1,4 +1,5 @@
 import streamlit as st
+import tiktoken
 import openai
 from dotenv import load_dotenv
 import pickle
